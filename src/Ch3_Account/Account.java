@@ -8,6 +8,7 @@ public class Account { // private/public class Order {
     private double status; //
     // private boolean done; // instance variable
 
+
     // method that deposits (adds) only a valid amount to the balance
     public void Withdrawal (double WithdrawalAmount) {
         if (status > 0.0) { // if the depositAmount is valid
@@ -31,9 +32,7 @@ public class Account { // private/public class Order {
     public void deposit(double depositAmount) {
         if (depositAmount > 0.0) { // if the depositAmount is valid
             status = status + depositAmount; // add it to the balance
-        }
-        if (depositAmount<0)
-        {
+        } else {
             System.out.println("Błąd!!!");
         }
     }
