@@ -1,28 +1,34 @@
 package Ch3_Account.MakingDifference;
 
-import Ch3_Account.Date;
-
-import java.time.Year;
+import java.util.Scanner;
 
 public class HeartRates {
+    Scanner input = new Scanner(System.in);
     String name;
     String lastName;
     int day;
     int month;
     int year;
 
+    //BMI
+    int bmi( ) { //= (weight * 10000 / (height * height));
+        System.out.println("Podaj swoj wzrost");
+        int height = input.nextInt();
+        System.out.println("Podaj swoją wagę");
+        int weight = input.nextInt();
+        return (weight * 10000 / (height * height));
+    }
     // calculates and return person age in years
-
     int ageInYears() {
-        return year; //?
+        return 2020 - year; //?
     }
     // personal's maximum heart rate
-    int heartDate() {
+    int heartRate() {
         return 220 - ageInYears(); //?
     }
     // personal's target rate
     double targetRate() {
-        return heartDate() * 0.70; //?
+        return heartRate() * 0.70; //?
     }
 
     public HeartRates(String name, String lastName, int day, int month, int year) {
