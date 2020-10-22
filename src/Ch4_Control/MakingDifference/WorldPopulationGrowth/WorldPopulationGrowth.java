@@ -1,26 +1,27 @@
 package Ch4_Control.MakingDifference.WorldPopulationGrowth;
 
+import Ch2_Intro.makingDefference.WorldPopulation;
+
 public class WorldPopulationGrowth {
     int year;
-    int forYears;
-    float  growthRate;
+    long population;
+    static float growthRate = 1.05f;
     long anticipatedWorldPopulation;
     long increaseWorldPopulation;
 
     public WorldPopulationGrowth() {
     }
 
-    public WorldPopulationGrowth(int year, int forYears, float growthRate
+    public WorldPopulationGrowth(int year, long population
             , long anticipatedWorldPopulation, long increaseWorldPopulation) {
         this.year = year;
-        this.forYears = forYears;
-        this.growthRate = growthRate;
+        this.population = population;
         this.anticipatedWorldPopulation = anticipatedWorldPopulation;
         this.increaseWorldPopulation = increaseWorldPopulation;
     }
 
     public static void Welcome() {
-        System.out.printf("\n%6S %11s %12s %30s %30s",
+        System.out.printf("\n%6S %18s %12s %30s %30s",
                 "year",
                 "population",
                 "growthRate",
@@ -31,9 +32,9 @@ public class WorldPopulationGrowth {
 
     public void ekran() {
 
-        System.out.printf("\n%6d %11d %12.3f  %29d %30d",
+        System.out.printf("\n%6d %,18d %12.2f  %29d %30d",
                 this.year,
-                this.forYears,
+                this.population,
                 this.growthRate,
                 this.anticipatedWorldPopulation,
                 this.increaseWorldPopulation);
@@ -42,7 +43,7 @@ public class WorldPopulationGrowth {
     @Override
     public String toString() {
         return  "\nyear=" + year +
-                ", forYears=" + forYears +
+                ", forYears=" + population +
                 ", growthRate=" + growthRate +
                 ", anticipatedWorldPopulation=" + anticipatedWorldPopulation +
                 ", increaseWorldPopulation=" + increaseWorldPopulation;
