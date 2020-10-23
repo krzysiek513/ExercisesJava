@@ -1,51 +1,46 @@
 package Ch4_Control.MakingDifference.WorldPopulationGrowth;
 
-import Ch2_Intro.makingDefference.WorldPopulation;
-
 public class WorldPopulationGrowth {
+    static float GROWTHRATE = 1.05f;
     int year;
-    long population;
-    static float growthRate = 1.05f;
-    long anticipatedWorldPopulation;
-    long increaseWorldPopulation;
+    float anticipatedPopulation;
+    float increaseWorldPopulation;
 
     public WorldPopulationGrowth() {
+        year = 2019;
+        anticipatedPopulation = 77000000000f;
+        increaseWorldPopulation = (anticipatedPopulation * GROWTHRATE) - anticipatedPopulation;
+
     }
 
-    public WorldPopulationGrowth(int year, long population
-            , long anticipatedWorldPopulation, long increaseWorldPopulation) {
+    public WorldPopulationGrowth(int year, float population) {
         this.year = year;
-        this.population = population;
-        this.anticipatedWorldPopulation = anticipatedWorldPopulation;
-        this.increaseWorldPopulation = increaseWorldPopulation;
+        anticipatedPopulation = population * GROWTHRATE;
+        increaseWorldPopulation = (anticipatedPopulation * GROWTHRATE) - anticipatedPopulation;
+
     }
+
 
     public static void Welcome() {
-        System.out.printf("\n%6S %18s %12s %30s %30s",
+        System.out.printf("\n%6S %24s %30s",
                 "year",
-                "population",
-                "growthRate",
-                "anticipatedWorldPopulation",
+                "anticipatedPopulation",
                 "increaseWorldPopulation");
 
     }
 
     public void ekran() {
-
-        System.out.printf("\n%6d %,18d %12.2f  %29d %30d",
+        System.out.printf("\n%6d %,24.0f %,30.0f",
                 this.year,
-                this.population,
-                this.growthRate,
-                this.anticipatedWorldPopulation,
+                this.anticipatedPopulation,
                 this.increaseWorldPopulation);
     }
 
     @Override
     public String toString() {
         return  "\nyear=" + year +
-                ", forYears=" + population +
-                ", growthRate=" + growthRate +
-                ", anticipatedWorldPopulation=" + anticipatedWorldPopulation +
+                ", forYears=" + anticipatedPopulation +
+                ", growthRate=" + GROWTHRATE +
                 ", increaseWorldPopulation=" + increaseWorldPopulation;
     }
 }
