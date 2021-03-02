@@ -1,18 +1,19 @@
 package Ch5_Control2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BarChartPrintingProgram {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Podaj 5 liczb od 1 do 30");
-        int amount = 5;
-        int[] values = new int[amount];
+        final int amount = 5;
+        int values[] = new int[amount];
         int count = 0;
         while(count < amount){
             System.out.printf("%d z nich to: ", 1 + count);
 //            try {
-            values[count] = input.nextInt();
+                values[count] = input.nextInt();
 //            }
 //            catch (InputMismatchException e) {
 //                System.out.printf("miały być liczby... %s", e);

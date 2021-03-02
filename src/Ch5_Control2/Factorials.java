@@ -11,6 +11,6 @@ public class Factorials {
         for (int counter = 1; counter <= factorialFrom; counter++){
             factorial= factorial * counter;
         }
-        System.out.printf("silnie z %d to %d ", factorialFrom, factorial);
+        System.out.printf("silnia z %d to %d ", factorialFrom, factorial);
     }
 }
