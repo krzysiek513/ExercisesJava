@@ -1,4 +1,4 @@
-package Ch5_Control2.CalculatingSales;
+package Ch5_Control2.CalculatingSales2;
 
 public class ProductTest {
     public static void main(String[] args) {
